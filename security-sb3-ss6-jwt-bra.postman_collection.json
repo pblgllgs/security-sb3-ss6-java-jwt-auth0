@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "51f9be76-0421-4a60-b480-e1ba44eb0835",
+		"name": "security-sb3-ss6-jwt-bra",
+		"description": "[https://github.com/pblgllgs/security-sb3-ss6-java-jwt-auth0](https://github.com/pblgllgs/security-sb3-ss6-java-jwt-auth0)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17450698"
+	},
+	"item": [
+		{
+			"name": "product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjkyNzU2MzEwfQ.ryG7gKIcBlHJcSGQ4lOjAAD4yil_wibXa7p1Z0ZMzYl_wVl5TBBS3Xs-KfaOM1_sH0oSolxzgCu0qvooZcXbbkJ4g5_vaSamg3dT5IPdA8rO1dsREe1PEJAtBHTfwOmJDn96sgd7f0Lh0cA7YwWcyOCHrHqG89ZMUrnbsgNuWupmLdWz5AgtOId-c_a2hQ2Z4I-0xktJ6RhSTgYsjvJFFn4vccbqVW_eDn60RVfhrgNecA8cJdQA8W-ciyqtRjxshzlE74EbjMZ0UFwnCGi1sZtf7IJ77PQZUl9NbIQT3yROH0dJli5wCBevbvXqL_PcWX3fjEa3UjBO1XODuXKsCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"PC\",\r\n    \"price\":100.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/product",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"password\",\r\n    \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auth/register",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auth/authenticate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "BASE_URL"
+		}
+	]
+}
